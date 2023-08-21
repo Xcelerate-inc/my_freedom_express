@@ -7,13 +7,11 @@ export default function LanguageButton({ onOpen }) {
     const [lang, setLang] = useState('eng')
 
     useEffect(() => {
-
         const langCookie = Cookies.get('lang')
 
         if (langCookie) {
             setLang(langCookie)
         }
-
     }, [])
 
     return (
