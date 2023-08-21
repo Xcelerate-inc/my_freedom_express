@@ -11,7 +11,7 @@ export default function LanguageButton({ onOpen }) {
 
         if (langCookie) {
             setLang(langCookie)
-        }
+        } 
     }, [])
 
     return (
