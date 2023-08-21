@@ -22,14 +22,14 @@ import VideoSection from "./VideoSection";
 import About from "./About";
 import Footer from "./Footer";
 
-export default function UiEng() {
+export default function UiEng({onOpen}) {
   return (
     <Box>
-      <Navbar />
+      <Navbar onOpen={onOpen} />
       <Hero />
       <VideoSection />
       <About />
-      <Footer />
+      <Footer onOpen={onOpen} />
     </Box>
   );
 }

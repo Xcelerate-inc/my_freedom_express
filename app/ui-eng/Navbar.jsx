@@ -1,7 +1,8 @@
-import { Flex, HStack, Img, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, HStack, Img, Text } from "@chakra-ui/react";
 import React from "react";
+import LanguageButton from "../LanguageButton";
 
-const Navbar = () => {
+const Navbar = ({ onOpen }) => {
   return (
     <HStack
       justify="space-between"
@@ -21,6 +22,9 @@ const Navbar = () => {
         </Text>
         Express
       </Flex>
+      <Box>
+        <LanguageButton onOpen={onOpen} />
+      </Box>
       <Flex bg="black">
         <Img src="./img/nav-img.png" />
       </Flex>
