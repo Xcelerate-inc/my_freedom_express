@@ -26,7 +26,8 @@ const VideoSection = () => {
             Hacemos que ganar sea más FÁCIL
             <Text as="span" fontFamily="default">
               !
-            </Text>
+            </Text> 
+            
           </Flex>
           <Divider
             maxW="250px"
