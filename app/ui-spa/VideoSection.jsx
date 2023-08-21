@@ -18,7 +18,7 @@ const VideoSection = () => {
   return (
     <Flex w="full" h="690px" gap="20" px="4" mx="auto" justify="center">
       <Stack flex="1" color="white" maxW="541px" justify="center">
-        <Img src="./img/video.jpg" />
+        <Img src="./img/Video.jpg" />
       </Stack>
       <Stack flex="1" justify="center" maxW="600px">
         <HStack color="brand.600">
