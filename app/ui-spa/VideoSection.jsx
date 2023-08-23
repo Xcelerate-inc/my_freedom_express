@@ -2,7 +2,7 @@ import { Flex, Stack, Img, Box, Text, HStack, Divider } from "@chakra-ui/react";
 import React from "react";
 import useRegister from '../Hooks/useRegister'
 
-const VideoSection = ({onOpen}) => {
+const VideoSection = ({ onOpen }) => {
 
 
   const videoText = [
@@ -19,10 +19,8 @@ const VideoSection = ({onOpen}) => {
   ];
 
   return (
-    <Flex w="full" h="690px" gap="20" px="4" mx="auto" justify="center">
-      <Stack flex="1" color="white" maxW="541px" justify="center">
-        <Img src="./img/Video.jpg" />
-      </Stack>
+    <Flex w="full" h="690px" gap="20" px="4" mx="auto" justify="center" alignItems={'center'}>
+      <iframe className="" id="video" width={520} height={360} src='https://www.youtube.com/embed/aVg7lFdfQ2A' allowTransparency="true" autoPlay={true} allowFullScreen muted="true" />
       <Stack flex="1" justify="center" maxW="600px">
         <HStack color="brand.600">
           <Flex fontSize="lg" color="brand.600" fontWeight="semibold">

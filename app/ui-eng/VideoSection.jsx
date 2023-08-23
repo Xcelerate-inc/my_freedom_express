@@ -15,10 +15,10 @@ const VideoSection = ({onOpen}) => {
   ];
 
   return (
-    <Flex w="full" h="690px" gap="20" mx="auto" justify="center">
-      <Stack flex="1" color="white" maxW="541px" justify="center">
-        <Img src="/img/Video.jpg" />
-      </Stack>
+    <Flex w="full" h="690px" gap="20" mx="auto" alignItems={'center'} justify="center">
+        {/* <Img src="/img/Video.jpg" /> */}
+        <iframe className="" id="video" width={520} height={360} src='https://www.youtube.com/embed/bfBZ87qS2bU' allowTransparency="true" autoPlay={true} allowFullScreen muted="true" />
+
       <Stack flex="1" justify="center" maxW="600px">
         <HStack color="brand.600">
           <Flex fontSize="lg" color="brand.600" fontWeight="semibold">
