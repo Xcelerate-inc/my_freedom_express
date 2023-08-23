@@ -47,7 +47,7 @@ const VideoSection = () => {
               gap="2"
             >
               <Img src="./img/check-circle.png" />
-              <Text fontSize="lg">{about.text}</Text>
+              <p fontSize="lg">{about.text}</p>
             </Flex>
           ))}
         </Box>
