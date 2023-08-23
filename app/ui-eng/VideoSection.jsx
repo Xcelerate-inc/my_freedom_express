@@ -1,7 +1,12 @@
 import { Flex, Stack, Img, Box, Text, HStack, Divider } from "@chakra-ui/react";
 import React from "react";
+import useRegister from '../Hooks/useRegister'
 
-const VideoSection = () => {
+
+const VideoSection = ({onOpen}) => {
+
+  const {firstName, setFirstName, lastName, setLastName, email, setEmail, phoneNumber, setPhoneNumber, handleSubmit} = useRegister()
+
   const videoText = [
     { text: "Free to join and only $ 12.95 to upgrade and start earning" },
     { text: "Global opportunity with $ 5.95 worldwide flat shipping" },

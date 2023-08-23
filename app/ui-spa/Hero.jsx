@@ -12,8 +12,13 @@ import {
 } from "@chakra-ui/react";
 import { Formik, Form, Field } from "formik";
 import React from "react";
+import useRegister from "../Hooks/useRegister";
 
-const Hero = () => {
+const Hero = ({ onOpen }) => {
+
+  const { handleSubmit } = useRegister()
+
+
   return (
     <Flex
       bgImage="url('/img/hero-bg.png')"
@@ -103,7 +108,8 @@ const Hero = () => {
               number: "",
             }}
             onSubmit={(values) => {
-              console.log(values);
+              // console.log(values);
+              handleSubmit(onOpen, values)
             }}
           >
             <Form>

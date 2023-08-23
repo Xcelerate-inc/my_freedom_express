@@ -22,11 +22,11 @@ import VideoSection from "./VideoSection";
 import About from "./About";
 import Footer from "./Footer";
 
-export default function UiEng({onOpen}) {
+export default function UiEng({onOpen, sponsorModalOpen}) {
   return (
     <Box>
       <Navbar onOpen={onOpen} />
-      <Hero />
+      <Hero onOpen={sponsorModalOpen} />
       <VideoSection />
       <About />
       <Footer onOpen={onOpen} />

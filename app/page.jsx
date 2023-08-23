@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 import { Button, Flex, FormControl, FormLabel, Input, useDisclosure, useToast } from "@chakra-ui/react";
 import Axios from './Helpers/Axios'
 
-
 import {
   Modal,
   ModalOverlay,
@@ -72,68 +71,6 @@ export default function Home() {
     }
   }
 
-  const [firstName, setFirstName] = useState()
-  const [lastName, setLastName] = useState()
-  const [email, setEmail] = useState()
-  const [phoneNumber, setPhoneNumber] = useState()
-
-  const handleSubmit = async () => {
-
-    const sponsor = Cookies.get('sponsor')
-
-    if (!sponsor) {
-
-      toast({
-        title: 'Please verify your sponsor!',
-        description: "",
-        status: 'error',
-        duration: 9000,
-        isClosable: true,
-      })
-
-      return onOpen()
-    }
-
-    if (!firstName && !lastName && !email && !phoneNumber) {
-      return toast({
-        title: 'All fields are required!',
-        description: "",
-        status: 'error',
-        duration: 9000,
-        isClosable: true,
-      })
-    }
-
-    const res = await Axios.post('/contact', {
-      first_name: firstName,
-      last_name: lastName,
-      email: email,
-      phone_number: phoneNumber,
-      sponsorId: sponsor,
-      contactHost: 'go20x'
-    })
-
-    if (res?.data?.ok) {
-      Cookies.remove('sponsor')
-      window.location.href = `https://shopxcelerate.com/${sponsor}`
-    } else {
-      toast({
-        title: 'Oopss!',
-        description: res?.data?.msg,
-        status: 'error',
-        duration: 9000,
-        isClosable: true,
-      })
-
-      Cookies.remove('sponsor')
-
-      setTimeout(() => {
-        window.location.href = `/`
-      }, 500)
-
-    }
-
-  }
 
 
   const [lang, setLang] = useState('eng')
@@ -157,7 +94,7 @@ export default function Home() {
 
   return (
     <>
-      {lang == 'spa' ? <UiSpa onOpen={languageModal.onOpen} /> : <UiEng onOpen={languageModal.onOpen} />}
+      {lang == 'spa' ? <UiSpa onOpen={languageModal.onOpen} sponsorModalOpen={sponsorModal.onOpen} /> : <UiEng onOpen={languageModal.onOpen} sponsorModalOpen={sponsorModal.onOpen} />}
 
       <Modal isOpen={languageModal.isOpen} onClose={languageModal.onClose}>
         <ModalOverlay />
