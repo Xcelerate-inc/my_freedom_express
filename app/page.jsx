@@ -4,7 +4,7 @@ import UiSpa from "./ui-spa/UiSpa";
 import UiEng from "./ui-eng/UiEng";
 import Cookies from 'js-cookie'
 import { useEffect, useState } from "react";
-import { Button, Flex, FormControl, FormLabel, Input, useDisclosure, useToast } from "@chakra-ui/react";
+import { Avatar, Box, Button, Flex, FormControl, FormLabel, Input, Text, useDisclosure, useToast } from "@chakra-ui/react";
 import Axios from './Helpers/Axios'
 
 import {
@@ -23,17 +23,22 @@ export default function Home() {
   const sponsorModal = useDisclosure()
 
 
-  const [sponsord, setSponsed] = useState()
+  const [sponsor, setSponsor] = useState(null)
 
   const [username, setUsername] = useState(null)
   const toast = useToast()
 
   useEffect(() => {
-    const sponsor = Cookies.get('sponsor')
-    if (!sponsor) {
+    const sponsorUsername = Cookies.get('sponsor')
+    console.log('sponsorUsername', sponsorUsername)
+    if (!sponsorUsername) {
       sponsorModal.onOpen()
     } else {
-      setSponsed(sponsor)
+
+      console.log('sponsor', sponsor)
+      if(!sponsor){
+        verifySponsor(sponsorUsername)
+      }
     }
   }, [])
 
@@ -42,7 +47,14 @@ export default function Home() {
       return alert('Please enter a username')
     }
 
-    const res = await Axios.get(`/sponsor/validate/${username}`)
+    await verifySponsor(username)
+
+  }
+
+
+  const verifySponsor = async (sponsorUsername) => {
+
+    const res = await Axios.get(`/sponsor/validate/${sponsorUsername}`)
 
     if (!res?.data?.ok) {
 
@@ -55,8 +67,12 @@ export default function Home() {
       })
 
     }
+
     else {
-      Cookies.set('sponsor', username)
+      Cookies.set('sponsor', res?.data?.user?.username)
+
+      setSponsor(res?.data?.user)
+
       toast({
         title: 'Sponsor verified',
         description: "",
@@ -65,12 +81,12 @@ export default function Home() {
         isClosable: true,
       })
 
-      setTimeout(() => {
-        window.location.href = `/`
-      }, 500)
+      sponsorModal.onClose()
+      // setTimeout(() => {
+      //   window.location.href = `/`
+      // }, 500)
     }
   }
-
 
 
   const [lang, setLang] = useState('eng')
@@ -131,6 +147,17 @@ export default function Home() {
           </ModalFooter>
         </ModalContent>
       </Modal>
+
+      {sponsor && <Box as='section' position={'fixed'} zIndex='9999' bottom='12px' left='12px' bg='white' shadow={'md'} px='3' py={1} rounded='full'>
+        <Flex gap={2} alignItems='center'>
+          <Avatar size='sm' src={sponsor?.avatar} />
+          <Box lineHeight={1}>
+            <Text mb={0} lineHeight={1} fontSize={'9px'} color='gray.500'>Referred by</Text>
+            <Text as={'span'} fontSize={'14px'}>{sponsor.full_name}</Text>
+          </Box>
+
+        </Flex>
+      </Box>}
     </>
   );
 }
