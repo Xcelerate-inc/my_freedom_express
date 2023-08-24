@@ -4,13 +4,15 @@ import LanguageButton from '../LanguageButton'
 
 const Navbar = ({ onOpen }) => {
   return (
-    <HStack
+    <Flex
       justify="space-between"
       bg="black"
-      py="2"
-      h="20"
+      py="5"
+      // h="20"
       fontSize="3xl"
       px="20"
+      alignItems={'center'}
+      direction={{ base: 'column', lg: 'row' }}
     >
       <Flex>
         <Img src="./img/nav-img.png" />
@@ -25,10 +27,10 @@ const Navbar = ({ onOpen }) => {
       <Box>
         <LanguageButton onOpen={onOpen} />
       </Box>
-      <Flex bg="black">
+      {/* <Flex bg="black">
         <Img src="./img/nav-img.png" />
-      </Flex>
-    </HStack>
+      </Flex> */}
+    </Flex>
   );
 };
 

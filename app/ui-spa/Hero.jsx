@@ -26,14 +26,16 @@ const Hero = ({ onOpen }) => {
       bgPosition="center"
       bgSize="cover"
       w="full"
-      h="800px"
+      // h="800px"
+      py={10}
+      px={{ base: 3, md: 0 }}
       mr="2"
-      px="4"
       justify="center"
       gap="20"
+      direction={{ base: 'column', lg: 'row' }}
     >
       <Stack maxW="600px" flex="1" color="white" justify="center">
-        <Text fontSize="64px" fontWeight="bold" lineHeight="80px">
+      <Text fontSize={{base: '32px', lg: '64px'}} fontWeight="bold" lineHeight={{base: '32px', lg: '80px'}}>
           Únase
           <HStack
             px="1"

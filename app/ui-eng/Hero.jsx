@@ -26,21 +26,25 @@ const Hero = ({onOpen}) => {
       bgPosition="center"
       bgSize="cover"
       w="full"
-      h="800px"
+      // h="800px"
+      py={10}
+      px={{base:3, md: 0}}
       mr="2"
       justify="center"
       gap="20"
+      direction={{base: 'column', lg: 'row'}}
     >
       <Stack maxW="600px" flex="1" color="white" justify="center">
-        <Text fontSize="64px" fontWeight="bold" lineHeight="80px">
+        <Text fontSize={{base: '32px', lg: '64px'}} fontWeight="bold" lineHeight={{base: '32px', lg: '80px'}}>
           Join Our
           <HStack
             px="1"
             as="span"
             display="inline-flex"
-            h="64px"
+            h={{base: '40px', lg: "64px"}}
             bg="brand.500"
             ml="4"
+            mt={{base: 8, lg: 0}}
           >
             <Text as="span">Free</Text>
           </HStack>
