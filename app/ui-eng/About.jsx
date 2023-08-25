@@ -1,4 +1,4 @@
-import { Stack, Img, Text, Box, Hide, Container } from "@chakra-ui/react";
+import { Stack, Img, Text, Box, Hide, Container, Show } from "@chakra-ui/react";
 
 const About = () => {
   return (
@@ -20,13 +20,12 @@ const About = () => {
           launches brand new global powerline system
         </Text>
 
-
-        <Stack position="relative" mt={{lg: 32}}>
+        <Stack position="relative" mt={{base: 5, lg: 32}}>
           <Stack
             position={{ lg: "absolute" }}
             color="white"
             top={{ lg: "-20" }}
-            p="4"
+            p={{lg:"4"}}
             spacing={{ base: '5', lg: "36" }}
             fontSize="base"
           >
@@ -51,7 +50,7 @@ const About = () => {
             position={{ lg: "absolute" }}
             color="white"
             top="-20"
-            p="4"
+            p={{lg:"4"}}
             right="0"
             spacing={{ base: '5', lg: "36" }}
             fontSize="base"
@@ -71,17 +70,18 @@ const About = () => {
               sales and traffic
             </Text>
           </Stack>
+
           <Hide below="lg">
             <Img src="./img/about.png" />
           </Hide>
         </Stack>
 
-        <Text fontSize="base" color="white" pb="20" pt="10" textAlign="center">
+        <Text mx={{lg:"4"}} mt={5} fontSize="base" color="white" pb="20"  textAlign={{lg:"center"}}>
           Free training by multi
           <Box as="span" mx="0.5" fontFamily="default">
             -
           </Box>
-          million dollar earners in the <br /> Network Marketing and Social Media
+          million dollar earners in the <Show above="lg"><br /> </Show> Network Marketing and Social Media
           industry
         </Text>
       </Container>

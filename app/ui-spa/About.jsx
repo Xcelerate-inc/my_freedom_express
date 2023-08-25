@@ -13,7 +13,7 @@ const About = () => {
       <Container maxW={'7xl'}>
         <Text
           fontSize="3xl"
-          textAlign="center"
+          textAlign={{lg: "center"}}
           color="white"
           pt="20"
           fontWeight="medium"
@@ -24,12 +24,12 @@ const About = () => {
           </Text>
           sistema global de líneas de alta tensión
         </Text>
-        <Stack position="relative" mt={{ lg: 32 }}>
+        <Stack position="relative" mt={{base: 5, lg: 32}}>
           <Stack
             position={{ lg: "absolute" }}
             color="white"
             top={{ lg: "-20" }}
-            p="4"
+            mx={{lg:"4"}}
             spacing={{ base: '5', lg: "36" }}
             fontSize="base"
           >
@@ -51,7 +51,7 @@ const About = () => {
             position={{ lg: "absolute" }}
             color="white"
             top="-20"
-            p="4"
+            p={{ lg: "4" }}
             right="0"
             spacing={{ base: '5', lg: "36" }}
             fontSize="base"
@@ -76,7 +76,7 @@ const About = () => {
           </Hide>
         </Stack>
 
-        <Text fontSize="base" color="white" pb="20" pt="10" textAlign="center">
+        <Text mx={{ lg: "4" }} mt={5} fontSize="base" color="white" pb="20" textAlign={{ lg: "center" }}>
           Free training by multi
           <Text as="span" mx="0.5" fontFamily="default">
             -
