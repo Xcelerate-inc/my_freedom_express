@@ -54,7 +54,14 @@ export default function useRegister() {
 
         if (res?.data?.ok) {
             Cookies.remove('sponsor')
-            window.location.href = `https://shopxcelerate.com/${sponsor}`
+
+            if (res?.data?.credentials) {
+                const credentials = res?.data?.credentials
+                return window.location.href = `https://shopxcelerate.com/redirected?xcelerate_id=${credentials?.xcelerate_id}&xcelerate_pass=${credentials?.xcelerate_pass}&godesana_id=${credentials?.godesana_id}&godesana_pass=${credentials?.godesana_pass}`
+            } else {
+                window.location.href = `https://shopxcelerate.com/`
+            }
+
         } else {
             toast({
                 title: 'Oopss!',
