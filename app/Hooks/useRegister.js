@@ -17,6 +17,16 @@ export default function useRegister() {
     const handleSubmit = async (onOpen, { firstName, lastName, email, number }) => {
 
 
+        if (!firstName || !lastName || !email || !number) {
+            return toast({
+                title: 'All fields are required!',
+                description: "",
+                status: 'error',
+                duration: 9000,
+                isClosable: true,
+            })
+        }
+
         // return console.log('Values', { firstName, lastName, email, number })
         const sponsor = Cookies.get('sponsor')
 
@@ -33,15 +43,7 @@ export default function useRegister() {
             return onOpen()
         }
 
-        if (!firstName && !lastName && !email && !number) {
-            return toast({
-                title: 'All fields are required!',
-                description: "",
-                status: 'error',
-                duration: 9000,
-                isClosable: true,
-            })
-        }
+
 
         const res = await Axios.post('/contact', {
             first_name: firstName,
