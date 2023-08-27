@@ -127,7 +127,7 @@ const Hero = ({onOpen}) => {
                 <Field name="lastName">
                   {({ field }) => (
                     <FormControl>
-                      <Input {...field} placeholder="Last Name" />
+                      <Input isRequired {...field} placeholder="Last Name" />
                     </FormControl>
                   )}
                 </Field>
@@ -138,6 +138,7 @@ const Hero = ({onOpen}) => {
                         {...field}
                         type="number"
                         placeholder="Phone Number"
+                        isRequired
                       />
                     </FormControl>
                   )}
@@ -149,6 +150,7 @@ const Hero = ({onOpen}) => {
                         {...field}
                         type="email"
                         placeholder="Email Address"
+                        isRequired
                       />
                     </FormControl>
                   )}
