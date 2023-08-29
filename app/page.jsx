@@ -16,6 +16,8 @@ import {
   ModalBody,
   ModalCloseButton,
 } from '@chakra-ui/react'
+import Head from "next/head";
+import Script from "next/script";
 
 export default function Home() {
   // Cookies.set('lang', 'spa')
@@ -36,7 +38,7 @@ export default function Home() {
     } else {
 
       console.log('sponsor', sponsor)
-      if(!sponsor){
+      if (!sponsor) {
         verifySponsor(sponsorUsername)
       }
     }
@@ -110,6 +112,10 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+    
+      </Head>
+
       {lang == 'spa' ? <UiSpa onOpen={languageModal.onOpen} sponsorModalOpen={sponsorModal.onOpen} /> : <UiEng onOpen={languageModal.onOpen} sponsorModalOpen={sponsorModal.onOpen} />}
 
       <Modal isOpen={languageModal.isOpen} onClose={languageModal.onClose}>

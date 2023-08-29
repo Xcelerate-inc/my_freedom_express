@@ -1,6 +1,8 @@
+import Head from "next/head";
 import { Providers } from "./Providers";
 import "./globals.css";
 import localFont from "next/font/local";
+import Script from "next/script";
 
 export const metadata = {
   title: "My Freedom Express App",
@@ -35,9 +37,16 @@ const lufga = localFont({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <title>Join MyFreedomExpress Today</title>
+        <meta name="description" content="Take The Free Tour Today" />
+        <Script
+          src="/facebook-pixel.js"
+        ></Script>
+      </head>
       <body className={lufga.className}>
         <Providers>{children}</Providers>
       </body>
-    </html>
+    </html >
   );
 }
