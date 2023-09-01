@@ -52,9 +52,7 @@ const Hero = ({onOpen}) => {
           Global Powerline
         </Text>
         <Text fontSize="lg" mr="18">
-          Thousands of people around the world are joining us every day. Get
-          your FREE position now and take advantage of the perfect timing and
-          exclusive Team Freedom digital resource kit.
+        This is the ultimate side hustle. Earn unlimited commissions, bonuses and free vacations. Want to earn even more? Upgrade before the next Free Member and the earning potential is life changing.
         </Text>
       </Stack>
 
@@ -162,7 +160,7 @@ const Hero = ({onOpen}) => {
                   bg="brand.500"
                   type="submit"
                 >
-                  Create My Free Account
+                  Let's Get Started
                 </Button>
               </Stack>
             </Form>

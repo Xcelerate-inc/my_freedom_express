@@ -8,10 +8,10 @@ const VideoSection = ({ onOpen }) => {
   const { firstName, setFirstName, lastName, setLastName, email, setEmail, phoneNumber, setPhoneNumber, handleSubmit } = useRegister()
 
   const videoText = [
-    { text: "Free to join and only $ 12.95 to upgrade and start earning" },
-    { text: "Global opportunity with $ 5.95 worldwide flat shipping" },
-    { text: "Get paid 3% per level and on all Member orders" },
-    { text: "Everyone that joins after you is automatically placed below you" },
+    { text: "Start earning commissions today using your phone or laptop" },
+    { text: "Build a Global business from your home or even the beach " },
+    { text: "Get paid 24 hours a day, 7 days a week even when you sleep" },
+    { text: "Everyone that upgrades after you is automatically placed below you" },
   ];
 
   return (
